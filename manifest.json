@@ -1,14 +1,13 @@
 {
   "name": "FocusGuard: Website Blocker",
 
-  "description": "Block distracting websites and boost your productivity. Add domains and block current pages. All in one easy-to-use Chrome extension.",
+  "description": "Block distracting websites and boost your productivity. Add domains and block current pages all in one easy-to-use Chrome extension.",
   "version": "1.0",
   "manifest_version": 3,
   "action": {
     "default_popup": "./app/main.html"
   },
   "permissions": ["webNavigation", "storage", "tabs"],
-  "host_permissions": ["https://*/*", "http://*/*"],
   "background": {
     "service_worker": "./app/service-worker.js",
     "type": "module"

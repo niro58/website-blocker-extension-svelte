@@ -13,14 +13,18 @@ chrome.webNavigation.onCommitted.addListener(async function (details) {
     return;
   }
 
-  chrome.tabs.update(tabId, { url: "https://www.google.com" }, function (tab) {
-    if (chrome.runtime.lastError) {
-      console.error(chrome.runtime.lastError);
-    } else {
-      chrome.scripting.executeScript({
-        target: { tabId: tab.id },
-        func: () => alert(message),
-      });
+  chrome.tabs.update(
+    tabId,
+    { url: "https://tivoku.com/website-blocker/blocked" },
+    function (tab) {
+      if (chrome.runtime.lastError) {
+        console.error(chrome.runtime.lastError);
+      } else {
+        chrome.scripting.executeScript({
+          target: { tabId: tab.id },
+          func: () => alert(message),
+        });
+      }
     }
-  });
+  );
 });
